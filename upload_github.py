@@ -5,7 +5,7 @@ import base64
 
 
 def upload(data):
-    """upload to github
+    """upload to github by api
 
     :param data: from plugin
     :return:
@@ -24,24 +24,17 @@ def upload(data):
                 path=data['type'],
                 filename=data['type'] + '_' + data['date'] + '.json'
             )
-
-            message = 'doc(json):import ' + data['type'] + '_' + data['date'] + '.json'
-
+            message = 'doc({}):import '.format(data['type']) + data['type'] + '_' + data['date'] + '.json'
             content = base64.b64encode(json.dumps(data['content']).encode('utf-8'))
-
             payload = "{\n  \"message\": \""+message+"\",\n" \
                       "  \"committer\": {\n" \
                       "    \"name\": \""+config['user']+"\",\n" \
                       "    \"email\": \""+config['email']+"\"\n  },\n" \
                       "  \"content\": \""+str(content, 'utf-8')+"\",\n" \
                       "  \"sha\": \"329688480d39049927147c162b9d2deaf885005f\"\n} "
-
             headers = {
-                'authorization': "token " + config['token'],
-                'cache-control': "no-cache",
-                'postman-token': "cd745ed3-5f4e-9292-930c-c32451fb7593"
+                'authorization': "token " + config['token']
             }
-
             response = requests.request("PUT", url, data=str(payload), headers=headers)
             print(response.text)
     else:
