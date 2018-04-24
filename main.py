@@ -1,6 +1,7 @@
 import os
 from functools import partial
 from pluginbase import PluginBase
+import upload_github
 
 # relative path
 here = os.path.abspath(os.path.dirname(__file__))
@@ -42,12 +43,12 @@ def run(app):
                 continue
             else:
                 print('{name} : {result}'.format(name=name, result=result))
+                upload_github.upload(result)
         except Exception as error:
             print(error)
 
 
 def main():
-    """main entry"""
     # Set up applications
     app = Application('app')
     run(app)

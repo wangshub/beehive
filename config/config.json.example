@@ -1,6 +1,7 @@
 {
-    "repo": "wangshub/test",
+    "repo": "test",
     "token": "abcdefghijklmn",
     "branch": "master",
-    "path": "/"
+    "user": "yourname",
+    "email": "name@example.com"
 }
