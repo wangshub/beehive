@@ -24,16 +24,17 @@
 
 ## 使用步骤
 
-```bash
-待补充
-python main.py
-```
+- 生成 Github Token 
+
+- 运行代码
+    ```bash
+    python main.py
+    ```
 
 
 ## 插件接口 Json 格式
 
-各个插件的返回值为字典类型，必须满足如下格式
-
+可以自己补充插件，各个插件的返回值为字典类型，必须满足如下格式
 
 ```json
 {
@@ -55,7 +56,7 @@ python main.py
 
 
 ## Todo
-- [x] Python 插件化信息管理，可拓展
-- [x] 信息保存到 Github 仓库
-- [ ] 更多插件补充
-- [ ] Docker 一键部署到本地或服务器
+- [x] Python 插件化信息管理，可拓展；
+- [x] 信息保存到 Github 仓库；
+- [ ] 更多插件补充；
+- [ ] Docker 一键部署到本地或服务器；

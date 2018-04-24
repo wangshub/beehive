@@ -15,13 +15,13 @@ def upload(data):
         with open(config_path, 'r') as f:
             config = json.load(f)
             # don't be fool
-            if config['repo'] != 'test':
+            if config['repo'] != 'beehive':
                 print('Be careful, cowboy!')
                 return
             url = "https://api.github.com/repos/{user}/{repo}/contents/{path}/{filename}".format(
                 user=config['user'],
                 repo=config['repo'],
-                path=data['type'],
+                path='data/'+data['type'],
                 filename=data['type'] + '_' + data['date'] + '.json'
             )
             message = 'doc({}):import '.format(data['type']) + data['type'] + '_' + data['date'] + '.json'
