@@ -6,7 +6,7 @@ import time
 
 
 def get_weather_info():
-    """获取当日天气"""
+    """获取当日天气插件"""
     weather_base = 'https://www.tianqi.com/'
     city = 'shenzhen'
     try:
