@@ -1,0 +1,5 @@
+user_agent==0.1.9
+requests==2.11.0
+pluginbase.egg==info
+beautifulsoup4==4.6.0
+pluginbase==0.5
