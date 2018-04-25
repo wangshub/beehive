@@ -13,8 +13,10 @@ def get_mbp_price():
         req = requests.get(url, headers=headers, timeout=6)
         soup = BeautifulSoup(req.text, 'lxml').find('div', class_='page-content')
         title = soup.find('span', class_='title-text').text
-        price = soup.find('span', class_='seckill-big-price').text
-
+        try:
+            price = soup.find('span', class_='seckill-big-price').text
+        except:
+            price = soup.find('span', class_='big-price').text
         return {
             'code': 0,
             'type': 'macbookpro',
