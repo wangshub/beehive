@@ -32,5 +32,3 @@ def get_mbp_price():
 def setup(app):
     print('-> Setting up : ' + __file__)
     app.register_function('get_mbp_price', get_mbp_price)
-
-get_mbp_price()
