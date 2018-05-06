@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from functools import partial
 from pluginbase import PluginBase
