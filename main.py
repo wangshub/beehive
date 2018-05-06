@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 import os
 from functools import partial
 from pluginbase import PluginBase
+import schedule
+import time
 import upload_github
 
 # relative path
@@ -47,11 +50,16 @@ def run(app):
         except Exception as error:
             print(error)
 
-
 def main():
     # Set up applications
     app = Application('app')
     run(app)
+
+    schedule.every(23).to(24).hours.do(run, app)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 
 if __name__ == '__main__':
