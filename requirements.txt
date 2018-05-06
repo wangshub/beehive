@@ -1,5 +1,6 @@
 user_agent==0.1.9
-requests==2.11.0
+schedule==0.5.0
 pluginbase.egg==info
+requests==2.11.0
 beautifulsoup4==4.6.0
 pluginbase==0.5
